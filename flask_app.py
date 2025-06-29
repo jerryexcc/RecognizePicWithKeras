@@ -21,7 +21,7 @@ loaded_model = load_model(file_path)
 def show_image(id):
     response = requests.get(f"https://api-data.line.me/v2/bot/message/{id}/content", headers={
         "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36",
-        "Authorization": "Bearer DE/9DDY8DN6Lfm23wS8AJNIEMrHZ4/aNbPfCEUZ073HuZe6G3nmowA2eCD8+owakR9wBjtPFO0m5nNZwXjOoPP0pJl+Ce6HBXw1uXjn1NLpJtwPSw//7rdnUs+vC6TIkdMSqaCWuvIQsPGU1KOPQkgdB04t89/1O/w1cDnyilFU="})
+        "Authorization": "Bearer <Message_Access_Token>"})
     img = Image.open(BytesIO(response.content))
     img = img.resize((224, 224))
     img_array = np.array(img)
