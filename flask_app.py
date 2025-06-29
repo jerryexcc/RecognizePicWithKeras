@@ -57,6 +57,7 @@ def per_image():
         data = request.json
         received_id = data.get('id')
         img = show_image(received_id)
+        pred = loaded_model.predict(img)
         if pred[0] < 18 and pred[0] > -8:
             return jsonify({
             "status": "success",
